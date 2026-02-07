@@ -38,7 +38,7 @@ export default function About() {
           <div className="w-20 h-1 bg-blue-600 mx-auto mb-8" />
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             Passionné par le développement web, je crée des solutions élégantes et performantes.
-            J'aime transformer des idées en réalité à travers du code propre et des designs soignés.
+            J&apos;aime transformer des idées en réalité à travers du code propre et des designs soignés.
           </p>
         </motion.div>
 

@@ -61,7 +61,7 @@ export default function Contact() {
           </h2>
           <div className="w-20 h-1 bg-blue-600 mx-auto mb-8" />
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Une question ou un projet en tête ? N'hésitez pas à me contacter
+            Une question ou un projet en tête ? N&apos;hésitez pas à me contacter
           </p>
         </motion.div>
 

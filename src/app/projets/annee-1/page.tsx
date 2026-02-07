@@ -124,7 +124,7 @@ export default function ProjetsAnnee1() {
               style={{ color: "var(--text-secondary)" }}
             >
               Mes premiers projets en data science — apprentissage des fondamentaux,
-              découverte des outils et construction d'une méthodologie rigoureuse.
+              découverte des outils et construction d&apos;une méthodologie rigoureuse.
             </p>
           </motion.header>
 
