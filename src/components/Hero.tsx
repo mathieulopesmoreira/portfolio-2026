@@ -162,8 +162,8 @@ export default function Hero() {
                   style={{ color: "var(--text-secondary)" }}
                 >
                   Étudiant en BUT Science des Données. De la cuisine à la data,
-                  je transforme les données en histoires. Passionné d&apos;auto-hébergement
-                  et d&apos;autonomie numérique.
+                  je transforme les données en histoires. Passionné d&apos;auto-hébergement,
+                  de jeux vidéo et d&apos;autonomie numérique.
                 </p>
               </motion.div>
             </div>
@@ -394,7 +394,7 @@ export default function Hero() {
                 style={{ color: "var(--text-secondary)" }}
               >
                 Étudiant en BUT Science des Données. De la cuisine à la data,
-                je transforme les données en histoires.
+                je transforme les données en histoires. Gamer et passionné de tech.
               </p>
             </motion.div>
           </div>
@@ -488,6 +488,13 @@ export default function Hero() {
                   style={{ color: "var(--text-muted)" }}
                 >
                   Auto-hébergement
+                </span>
+                <span style={{ color: "var(--accent)" }}>✦</span>
+                <span
+                  className="font-display text-sm tracking-widest uppercase"
+                  style={{ color: "var(--text-muted)" }}
+                >
+                  Gaming
                 </span>
                 <span style={{ color: "var(--accent)" }}>✦</span>
                 <span

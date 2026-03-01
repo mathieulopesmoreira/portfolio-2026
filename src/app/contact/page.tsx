@@ -14,11 +14,33 @@ export default function ContactPage() {
     message: "",
   });
   const [focused, setFocused] = useState<string | null>(null);
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [errorMsg, setErrorMsg] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    alert("Message envoyé ! (Fonctionnalité à implémenter)");
+    setStatus("loading");
+    setErrorMsg("");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (res.ok) {
+        setStatus("success");
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        const data = await res.json();
+        setErrorMsg(data.error || "Une erreur est survenue.");
+        setStatus("error");
+      }
+    } catch {
+      setErrorMsg("Impossible d'envoyer le message. V\u00e9rifiez votre connexion.");
+      setStatus("error");
+    }
   };
 
   const handleChange = (
@@ -30,8 +52,8 @@ export default function ContactPage() {
   const contactLinks = [
     {
       label: "Email",
-      value: "contact@example.com",
-      href: "mailto:contact@example.com",
+      value: "mathieu.lopes.moreira@etu.univ-poitiers.fr",
+      href: "mailto:mathieu.lopes.moreira@etu.univ-poitiers.fr",
     },
     {
       label: "Localisation",
@@ -204,25 +226,47 @@ export default function ContactPage() {
                   />
                 </div>
 
-                <div className="pt-8">
+                <div className="pt-8 space-y-4">
+                  {status === "success" && (
+                    <motion.p
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="text-sm font-mono tracking-wider"
+                      style={{ color: "var(--accent)" }}
+                    >
+                      ✦ Message envoyé avec succès. Je vous répondrai sous 24h.
+                    </motion.p>
+                  )}
+                  {status === "error" && (
+                    <motion.p
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="text-sm font-mono tracking-wider text-red-400"
+                    >
+                      {errorMsg}
+                    </motion.p>
+                  )}
                   <MagneticButton>
                     <button
                       type="submit"
-                      className="px-10 py-4 border text-sm font-medium tracking-widest uppercase transition-all duration-500"
+                      disabled={status === "loading"}
+                      className="px-10 py-4 border text-sm font-medium tracking-widest uppercase transition-all duration-500 disabled:opacity-50 disabled:cursor-not-allowed"
                       style={{
                         borderColor: "var(--accent)",
                         color: "var(--accent)",
                       }}
                       onMouseEnter={(e) => {
-                        e.currentTarget.style.backgroundColor = "var(--accent)";
-                        e.currentTarget.style.color = "var(--bg-primary)";
+                        if (status !== "loading") {
+                          e.currentTarget.style.backgroundColor = "var(--accent)";
+                          e.currentTarget.style.color = "var(--bg-primary)";
+                        }
                       }}
                       onMouseLeave={(e) => {
                         e.currentTarget.style.backgroundColor = "transparent";
                         e.currentTarget.style.color = "var(--accent)";
                       }}
                     >
-                      Envoyer →
+                      {status === "loading" ? "Envoi en cours..." : "Envoyer →"}
                     </button>
                   </MagneticButton>
                 </div>

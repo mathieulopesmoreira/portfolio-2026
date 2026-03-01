@@ -35,6 +35,14 @@ export default function AboutPage() {
       description:
         "L'autonomie numérique est une conviction. Je gère mes propres serveurs, déploie mes services, et explore les limites de ce que l'on peut construire soi-même. Chaque configuration est un puzzle que je prends plaisir à résoudre.",
     },
+    {
+      number: "04",
+      period: "Depuis toujours",
+      title: "Gaming",
+      lieu: "Passion personnelle",
+      description:
+        "Les jeux vidéo m'ont toujours accompagné. Ils m'enseignent la stratégie, la persévérance et l'esprit d'équipe. Du compétitif au narratif, le gaming nourrit ma créativité et ma capacité à résoudre des problèmes complexes.",
+    },
   ];
 
   const valeurs = [
