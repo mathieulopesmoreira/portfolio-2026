@@ -18,23 +18,20 @@ export default function ProjetsPage() {
       title: "Fondamentaux",
       description: "Découverte de la data science, premiers scripts Python, statistiques descriptives et visualisations exploratoires.",
       link: "/projets/annee-1",
-      tags: ["Python", "Pandas", "Matplotlib", "SQL"],
     },
     {
       number: "02",
       year: "2ème année",
-      title: "Machine Learning",
+      title: "Spécialisation",
       description: "Modèles prédictifs, classification, régression, traitement de données avancé et pipeline de données.",
       link: "/projets/annee-2",
-      tags: ["Scikit-learn", "NumPy", "Power BI", "PostgreSQL"],
     },
     {
       number: "03",
       year: "3ème année",
-      title: "IA & Big Data",
-      description: "Deep learning, traitement du langage naturel, systèmes distribués et projets à grande échelle.",
+      title: "Expertise",
+      description: "Disponible à la fin de mon BUT 3.",
       link: "/projets/annee-3",
-      tags: ["TensorFlow", "NLP", "Docker", "Spark"],
     },
   ];
 
@@ -119,20 +116,6 @@ export default function ProjetsPage() {
                       >
                         {projet.description}
                       </p>
-                      <div className="flex flex-wrap gap-2">
-                        {projet.tags.map((tag) => (
-                          <span
-                            key={tag}
-                            className="px-3 py-1 border text-xs font-mono tracking-wider"
-                            style={{
-                              borderColor: "var(--border)",
-                              color: "var(--text-muted)",
-                            }}
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
                     </div>
 
                     {/* Flèche */}

@@ -85,8 +85,7 @@ export default function ProjetsAnnee3() {
               className="text-base md:text-lg leading-relaxed max-w-md"
               style={{ color: "var(--text-secondary)" }}
             >
-              Les projets de troisième année seront disponibles
-              lors de mon entrée en BUT 3 — Science des Données.
+              Les projets de troisième année seront disponibles à la fin de mon BUT 3.
             </p>
 
             <p

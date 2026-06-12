@@ -16,9 +16,9 @@ export default function Footer() {
   ];
 
   const socials = [
-    { name: "GitHub", href: "https://github.com" },
-    { name: "LinkedIn", href: "https://linkedin.com" },
-    { name: "Email", href: "mailto:contact@example.com" },
+    { name: "GitHub", href: "https://github.com/mathieulopesmoreira" },
+    { name: "LinkedIn", href: "https://fr.linkedin.com/in/mathieu-lopes-moreira-24606b327" },
+    { name: "Email", href: "mailto:mathieu.lopes.moreira@etu.univ-poitiers.fr" },
   ];
 
   return (
@@ -143,12 +143,7 @@ export default function Footer() {
         >
           © {currentYear} — Tous droits réservés
         </p>
-        <p
-          className="text-xs font-mono tracking-wider mt-2 md:mt-0"
-          style={{ color: "var(--text-muted)" }}
-        >
-          Conçu avec précision
-        </p>
+
       </div>
     </footer>
   );

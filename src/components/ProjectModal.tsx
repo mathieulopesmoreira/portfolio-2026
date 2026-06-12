@@ -21,40 +21,14 @@ interface ProjectModalProps {
   onClose: () => void;
 }
 
-function ScreenshotImage({ src, alt }: { src: string; alt: string }) {
-  const [hasError, setHasError] = useReactState(false);
-
-  if (hasError) {
-    return (
-      <div
-        className="w-full h-full flex items-center justify-center"
-        style={{ backgroundColor: "var(--bg-secondary)" }}
-      >
-        <span className="font-mono text-sm uppercase tracking-widest" style={{ color: "var(--text-muted)" }}>
-          Capture à venir
-        </span>
-      </div>
-    );
-  }
-
-  return (
-    // eslint-disable-next-line @next/next/no-img-element
-    <img
-      src={src}
-      alt={alt}
-      className="w-full h-full object-cover"
-      onError={() => setHasError(true)}
-    />
-  );
-}
-
-interface ProjectModalProps {
-  project: ProjectData | null;
-  isOpen: boolean;
-  onClose: () => void;
-}
-
 export default function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
+  const [imageError, setImageError] = useReactState(false);
+
+  // Reset error state when a new project is loaded
+  useEffect(() => {
+    setImageError(false);
+  }, [project, setImageError]);
+
   // Lock body scroll when modal is open
   useEffect(() => {
     if (isOpen) {
@@ -124,27 +98,18 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
               </button>
 
               {/* Screenshot */}
-              {project.screenshot && (
+              {project.screenshot && !imageError && (
                 <div
                   className="relative w-full aspect-video border-b overflow-hidden"
                   style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-secondary)" }}
                 >
-                  <ScreenshotImage
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
                     src={project.screenshot}
                     alt={`Capture d'écran — ${project.title}`}
+                    className="w-full h-full object-cover"
+                    onError={() => setImageError(true)}
                   />
-                </div>
-              )}
-
-              {/* No screenshot placeholder */}
-              {!project.screenshot && (
-                <div
-                  className="relative w-full aspect-video border-b flex items-center justify-center"
-                  style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-secondary)" }}
-                >
-                  <span className="font-mono text-sm uppercase tracking-widest" style={{ color: "var(--text-muted)" }}>
-                    Capture à venir
-                  </span>
                 </div>
               )}
 

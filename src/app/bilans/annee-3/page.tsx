@@ -86,14 +86,14 @@ export default function BilanAnnee3() {
               style={{ color: "var(--text-secondary)" }}
             >
               Le bilan de troisième année sera disponible
-              lors de mon entrée en BUT 3 — Science des Données.
+              à la fin de mon BUT 3 — Science des Données.
             </p>
 
             <p
               className="font-mono text-xs tracking-widest uppercase mt-8"
               style={{ color: "var(--text-muted)" }}
             >
-              Rentrée 2026 — 2027
+              Fin d&apos;année 2026 — 2027
             </p>
           </motion.div>
 

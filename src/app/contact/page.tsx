@@ -61,14 +61,9 @@ export default function ContactPage() {
       href: "https://maps.app.goo.gl/VkRmjAR9oLG7eDDU9",
     },
     {
-      label: "GitHub",
-      value: "github.com",
-      href: "https://github.com",
-    },
-    {
       label: "LinkedIn",
-      value: "linkedin.com",
-      href: "https://linkedin.com",
+      value: "linkedin.com/in/mathieu-lopes-moreira-24606b327",
+      href: "https://fr.linkedin.com/in/mathieu-lopes-moreira-24606b327",
     },
   ];
 
@@ -104,9 +99,7 @@ export default function ContactPage() {
                 className="text-lg leading-relaxed mb-12"
                 style={{ color: "var(--text-secondary)" }}
               >
-                Un projet en tête, une collaboration, ou simplement
-                envie d&apos;échanger ? N&apos;hésitez pas à me contacter.
-                Je réponds généralement sous 24h.
+                Si vous voulez simplement discuter ou échanger, n&apos;hésitez pas à me contacter. Je réponds généralement sous 24h.
               </p>
 
               <div className="space-y-0">

@@ -13,11 +13,11 @@ export default function AboutPage() {
   const parcours = [
     {
       number: "01",
-      period: "Avant le BUT",
+      period: "Étés 2024 & 2025",
       title: "La Cuisine",
       lieu: "Parc de Fierbois",
       description:
-        "Ma première passion. La cuisine m'a enseigné la rigueur, le sens du détail et la capacité de créer quelque chose de mémorable à partir d'ingrédients simples. Ces compétences me suivent encore aujourd'hui dans tout ce que j'entreprends.",
+        "Une immersion totale dans le monde de la restauration saisonnière. Les étés en cuisine, c'est une école de vie incroyable. On y apprend à travailler en équipe dans des conditions extrêmes, à communiquer efficacement et rapidement pour se faire entendre au milieu du bruit, et à garder son calme quand tout s'accélère. J'y ai découvert la discipline pure, la gestion de l'urgence et une organisation méthodique sans faille au rythme effréné des services. C'est l'apprentissage de la rigueur opérationnelle, de la ponctualité et de la cohésion d'équipe face à la pression d'un service de 150 couverts. Cette expérience m'a aussi donné le goût de l'effort collectif, du travail bien fait et du détail esthétique et gustatif qui fait toute la différence.",
     },
     {
       number: "02",
@@ -25,32 +25,19 @@ export default function AboutPage() {
       title: "Science des Données",
       lieu: "BUT SD — IUT de Niort",
       description:
-        "La découverte de la data science a été un tournant. Analyser, modéliser, visualiser — transformer le chaos en clarté. Actuellement en 2ème année, je me spécialise en machine learning et en visualisation de données.",
+        "Le début d'une aventure passionnante. Mon BUT en Science des Données m'a ouvert les portes d'un univers fascinant centré sur l'architecture et la conception des systèmes d'information. J'y apprends à modéliser des bases de données complexes, à concevoir des architectures d'information logiques et à structurer des bases de données cohérentes. Ce cursus me permet de comprendre comment organiser la donnée pour la rendre exploitable, sécurisée et fluide. De la définition des schémas relationnels à la mise en place de flux d'intégration, chaque projet est pour moi l'opportunité de concevoir des systèmes d'information propres, optimisés et bien pensés pour répondre à des besoins concrets.",
     },
     {
       number: "03",
-      period: "En continu",
-      title: "Auto-hébergement",
-      lieu: "Projets personnels",
+      period: "2025 — Présent",
+      title: "Alternance",
+      lieu: "Groupe Covéa — Data Manager",
       description:
-        "L'autonomie numérique est une conviction. Je gère mes propres serveurs, déploie mes services, et explore les limites de ce que l'on peut construire soi-même. Chaque configuration est un puzzle que je prends plaisir à résoudre.",
-    },
-    {
-      number: "04",
-      period: "Depuis toujours",
-      title: "Gaming",
-      lieu: "Passion personnelle",
-      description:
-        "Les jeux vidéo m'ont toujours accompagné. Ils m'enseignent la stratégie, la persévérance et l'esprit d'équipe. Du compétitif au narratif, le gaming nourrit ma créativité et ma capacité à résoudre des problèmes complexes.",
+        "Ma première vraie plongée dans le monde de l'entreprise à grande échelle. En tant que Data Manager en alternance au sein du Groupe Covéa, je découvre la réalité de la gestion des données dans le secteur des assurances, où la qualité de l'information est un enjeu stratégique majeur. Mes missions au quotidien consistent à veiller à la fiabilité et à la gouvernance des données, à automatiser des flux pour faire gagner du temps aux équipes opérationnelles, et à collaborer avec différents métiers pour comprendre leurs besoins en données. C'est un terrain de jeu formidable pour appliquer ce que j'apprends en cours, tout en me confrontant aux problématiques réelles de sécurité, de confidentialité et de volumétrie propres à un grand groupe.",
     },
   ];
 
-  const valeurs = [
-    { label: "Rigueur", description: "Chaque détail compte, chaque donnée a du sens." },
-    { label: "Curiosité", description: "Apprendre est un mode de vie, pas une obligation." },
-    { label: "Autonomie", description: "Comprendre les systèmes pour ne pas en dépendre aveuglément." },
-    { label: "Créativité", description: "Les meilleures solutions naissent de perspectives inattendues." },
-  ];
+
 
   return (
     <>
@@ -64,13 +51,13 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mt-8">
               <div>
                 <TextReveal as="h1" className="heading-lg" delay={0.2}>
-                  Un parcours
+                  Mon parcours
                   <br />
-                  <span style={{ color: "var(--accent)" }}>atypique.</span>
+                  <span style={{ color: "var(--accent)" }}>&amp; mon histoire.</span>
                 </TextReveal>
               </div>
               <motion.div
-                className="flex flex-col justify-end"
+                className="flex flex-col justify-end space-y-6"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.5 }}
@@ -79,11 +66,13 @@ export default function AboutPage() {
                   className="text-lg leading-relaxed"
                   style={{ color: "var(--text-secondary)" }}
                 >
-                  Je suis <strong style={{ color: "var(--text-primary)" }}>Mathieu Lopes Moreira</strong>,
-                  actuellement en 2ème année de BUT Science des Données.
-                  Mon chemin — de la cuisine professionnelle à l&apos;analyse
-                  de données — n&apos;a rien de linéaire. Et c&apos;est
-                  précisément ce qui fait ma force.
+                  Je m&apos;appelle Mathieu Lopes Moreira. Après l&apos;obtention de mon Bac STI2D, j&apos;ai choisi de m&apos;orienter vers un BUT Science des Données, un cursus que je suis actuellement en alternance en tant que Data Manager au sein du Groupe Covéa. Mon parcours combine des études en informatique décisionnelle et des expériences concrètes sur le terrain, notamment durant mes étés passés en tant que saisonnier dans les cuisines professionnelles, où j&apos;ai développé une grande rigueur et le sens du travail en équipe sous pression.
+                </p>
+                <p
+                  className="text-lg leading-relaxed"
+                  style={{ color: "var(--text-secondary)" }}
+                >
+                  Passionné d&apos;informatique et d&apos;infrastructures technologiques, je consacre également une grande partie de mon temps libre au self-hosting et à la gestion de mes propres réseaux. J&apos;apprécie comprendre en profondeur le fonctionnement des systèmes afin de concevoir et de déployer des solutions fiables et autonomes.
                 </p>
               </motion.div>
             </div>
@@ -149,61 +138,6 @@ export default function AboutPage() {
               </motion.div>
             ))}
             <div className="border-t" style={{ borderColor: "var(--border)" }} />
-          </div>
-        </section>
-
-        {/* Valeurs */}
-        <section
-          className="py-24 md:py-32 px-6 md:px-12 lg:px-24 border-t"
-          style={{
-            backgroundColor: "var(--bg-secondary)",
-            borderColor: "var(--border)",
-          }}
-        >
-          <div className="max-w-7xl mx-auto">
-            <span className="section-number">Ce que je porte</span>
-            <TextReveal as="h2" className="heading-md mt-4 mb-16">
-              Mes <span style={{ color: "var(--accent)" }}>valeurs</span>
-            </TextReveal>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-px" style={{ backgroundColor: "var(--border)" }}>
-              {valeurs.map((valeur, index) => (
-                <motion.div
-                  key={index}
-                  className="p-8 md:p-12 transition-colors duration-300"
-                  style={{ backgroundColor: "var(--bg-secondary)" }}
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = "var(--bg-card)";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = "var(--bg-secondary)";
-                  }}
-                >
-                  <span
-                    className="font-mono text-xs tracking-widest"
-                    style={{ color: "var(--accent)" }}
-                  >
-                    0{index + 1}
-                  </span>
-                  <h3
-                    className="font-display text-2xl mt-3 mb-3"
-                    style={{ color: "var(--text-primary)" }}
-                  >
-                    {valeur.label}
-                  </h3>
-                  <p
-                    className="text-sm leading-relaxed"
-                    style={{ color: "var(--text-secondary)" }}
-                  >
-                    {valeur.description}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
           </div>
         </section>
       </main>

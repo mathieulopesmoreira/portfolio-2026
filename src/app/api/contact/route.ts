@@ -6,14 +6,33 @@ const FROM_ADDRESS = process.env.RESEND_FROM || "Portfolio <onboarding@resend.de
 const CONTACT_TO =
   process.env.CONTACT_TO || "mathieu.lopes.moreira@etu.univ-poitiers.fr";
 
+function escapeHtml(str: string): string {
+  if (typeof str !== "string") return "";
+  return str
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
 export async function POST(request: NextRequest) {
   try {
     const { name, email, message } = await request.json();
 
-    // Validation
+    // Validation de présence
     if (!name || !email || !message) {
       return NextResponse.json(
         { error: "Tous les champs sont requis." },
+        { status: 400 }
+      );
+    }
+
+    // Validation du format d'email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      return NextResponse.json(
+        { error: "Adresse email invalide." },
         { status: 400 }
       );
     }
@@ -25,12 +44,17 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Assainissement des données pour éviter les injections HTML/XSS dans l'email client
+    const safeName = escapeHtml(name.trim());
+    const safeEmail = escapeHtml(email.trim());
+    const safeMessage = escapeHtml(message.trim());
+
     // Envoi de l'email
     const { error } = await resend.emails.send({
       from: FROM_ADDRESS,
       to: CONTACT_TO,
       replyTo: email,
-      subject: `[Portfolio] Message de ${name}`,
+      subject: `[Portfolio] Message de ${safeName}`,
       html: `
         <div style="font-family: 'Inter', Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #0A0A0A; color: #F5F0EB; padding: 40px; border: 1px solid #1a1a1a;">
           <div style="border-bottom: 1px solid #C9A96E; padding-bottom: 20px; margin-bottom: 30px;">
@@ -41,20 +65,20 @@ export async function POST(request: NextRequest) {
 
           <div style="margin-bottom: 24px;">
             <p style="font-size: 11px; color: #C9A96E; text-transform: uppercase; letter-spacing: 2px; margin: 0 0 6px;">Nom</p>
-            <p style="font-size: 16px; color: #F5F0EB; margin: 0;">${name}</p>
+            <p style="font-size: 16px; color: #F5F0EB; margin: 0;">${safeName}</p>
           </div>
 
           <div style="margin-bottom: 24px;">
             <p style="font-size: 11px; color: #C9A96E; text-transform: uppercase; letter-spacing: 2px; margin: 0 0 6px;">Email</p>
             <p style="font-size: 16px; color: #F5F0EB; margin: 0;">
-              <a href="mailto:${email}" style="color: #F5F0EB; text-decoration: underline;">${email}</a>
+              <a href="mailto:${safeEmail}" style="color: #F5F0EB; text-decoration: underline;">${safeEmail}</a>
             </p>
           </div>
 
           <div style="margin-bottom: 24px;">
             <p style="font-size: 11px; color: #C9A96E; text-transform: uppercase; letter-spacing: 2px; margin: 0 0 6px;">Message</p>
             <div style="background: #111; padding: 20px; border-left: 2px solid #C9A96E; margin-top: 8px;">
-              <p style="font-size: 15px; color: #F5F0EB; margin: 0; line-height: 1.7; white-space: pre-wrap;">${message}</p>
+              <p style="font-size: 15px; color: #F5F0EB; margin: 0; line-height: 1.7; white-space: pre-wrap;">${safeMessage}</p>
             </div>
           </div>
 

@@ -14,7 +14,7 @@ function ProfileImage({ className = "", rounded = false }: { className?: string;
     <div className={`relative w-full h-full overflow-hidden ${rounded ? "rounded-full" : ""} ${className}`}>
       {!imgError ? (
         <motion.img
-          src="/profile.jpg"
+          src="/profile.png"
           alt="Mathieu Lopes Moreira"
           className={`w-full h-full object-cover ${rounded ? "rounded-full" : ""}`}
           style={{ filter: "grayscale(20%) contrast(1.05)" }}
@@ -161,9 +161,8 @@ export default function Hero() {
                   className="text-base leading-relaxed max-w-lg"
                   style={{ color: "var(--text-secondary)" }}
                 >
-                  Étudiant en BUT Science des Données. De la cuisine à la data,
-                  je transforme les données en histoires. Passionné d&apos;auto-hébergement,
-                  de jeux vidéo et d&apos;autonomie numérique.
+                  Étudiant en BUT Science des Données et Data Manager en alternance. De la cuisine
+                  à la data, je valorise et transforme les données en récits.
                 </p>
               </motion.div>
             </div>
@@ -393,8 +392,8 @@ export default function Hero() {
                 className="text-sm sm:text-base leading-relaxed"
                 style={{ color: "var(--text-secondary)" }}
               >
-                Étudiant en BUT Science des Données. De la cuisine à la data,
-                je transforme les données en histoires. Gamer et passionné de tech.
+                Étudiant en BUT Science des Données et Data Manager en alternance. De la cuisine
+                à la data, je valorise et transforme les données en récits.
               </p>
             </motion.div>
           </div>
@@ -453,90 +452,9 @@ export default function Hero() {
         </div>
       </motion.div>
 
-      {/* Marquee en bas — bande défilante infinie */}
-      <div
-        className="relative z-10 border-t py-5 overflow-hidden"
-        style={{ borderColor: "var(--border)" }}
-      >
-        <div className="marquee-container">
-          <div className="marquee-content">
-            {Array.from({ length: 4 }).map((_, i) => (
-              <span key={i} className="inline-flex items-center gap-8 mx-8">
-                <span
-                  className="font-display text-sm tracking-widest uppercase"
-                  style={{ color: "var(--text-muted)" }}
-                >
-                  Data Science
-                </span>
-                <span style={{ color: "var(--accent)" }}>✦</span>
-                <span
-                  className="font-display text-sm tracking-widest uppercase"
-                  style={{ color: "var(--text-muted)" }}
-                >
-                  Python
-                </span>
-                <span style={{ color: "var(--accent)" }}>✦</span>
-                <span
-                  className="font-display text-sm tracking-widest uppercase"
-                  style={{ color: "var(--text-muted)" }}
-                >
-                  Machine Learning
-                </span>
-                <span style={{ color: "var(--accent)" }}>✦</span>
-                <span
-                  className="font-display text-sm tracking-widest uppercase"
-                  style={{ color: "var(--text-muted)" }}
-                >
-                  Auto-hébergement
-                </span>
-                <span style={{ color: "var(--accent)" }}>✦</span>
-                <span
-                  className="font-display text-sm tracking-widest uppercase"
-                  style={{ color: "var(--text-muted)" }}
-                >
-                  Gaming
-                </span>
-                <span style={{ color: "var(--accent)" }}>✦</span>
-                <span
-                  className="font-display text-sm tracking-widest uppercase"
-                  style={{ color: "var(--text-muted)" }}
-                >
-                  SQL
-                </span>
-                <span style={{ color: "var(--accent)" }}>✦</span>
-                <span
-                  className="font-display text-sm tracking-widest uppercase"
-                  style={{ color: "var(--text-muted)" }}
-                >
-                  Visualisation
-                </span>
-                <span style={{ color: "var(--accent)" }}>✦</span>
-              </span>
-            ))}
-          </div>
-        </div>
-      </div>
 
-      {/* Scroll indicator — uniquement desktop */}
-      <motion.div
-        className="absolute bottom-24 left-6 md:left-12 hidden lg:flex flex-col items-center gap-2"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 2 }}
-      >
-        <span
-          className="font-mono text-[10px] tracking-widest uppercase"
-          style={{ color: "var(--text-muted)", writingMode: "vertical-rl" }}
-        >
-          Scroll
-        </span>
-        <motion.div
-          className="w-[1px] h-12"
-          style={{ transformOrigin: "top", background: "var(--accent)" }}
-          animate={{ scaleY: [0, 1, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-        />
-      </motion.div>
+
+
     </section>
   );
 }

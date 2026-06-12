@@ -37,6 +37,31 @@ Un portfolio moderne et responsive créé avec Next.js, TypeScript, Tailwind CSS
 npm install
 ```
 
+## 🍎 Démarrage sur Mac
+
+Si tu veux lancer ce projet sur un Mac, fais exactement ceci :
+
+1. Installer Node.js depuis [nodejs.org](https://nodejs.org/)
+2. Ouvrir l'application Terminal
+3. Aller dans le dossier du projet
+```bash
+cd /chemin/vers/Portfolio
+```
+4. Installer les dépendances
+```bash
+npm install
+```
+5. Démarrer le serveur local
+```bash
+npm run dev
+```
+6. Ouvrir le site dans ton navigateur
+```bash
+http://localhost:3000
+```
+
+Si la commande `cd` ne fonctionne pas, tu peux glisser le dossier du projet dans le Terminal pour récupérer automatiquement le bon chemin.
+
 ## 🚀 Démarrage
 
 Pour lancer le serveur de développement :

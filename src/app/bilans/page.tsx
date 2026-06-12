@@ -18,7 +18,7 @@ export default function BilansPage() {
       title: "Découverte",
       description: "Les fondamentaux de la data science, les premières lignes de code, et la découverte d'un univers qui deviendra une passion.",
       link: "/bilans/annee-1",
-      period: "2023 — 2024",
+      period: "2024 — 2025",
     },
     {
       number: "02",
@@ -26,15 +26,15 @@ export default function BilansPage() {
       title: "Approfondissement",
       description: "Machine Learning, bases de données avancées, et projets de plus en plus ambitieux. Le moment où la théorie rencontre la pratique.",
       link: "/bilans/annee-2",
-      period: "2024 — 2025",
+      period: "2025 — 2026",
     },
     {
       number: "03",
-      year: "3ème année",
+      year: "3ème année (Bientôt)",
       title: "Spécialisation",
-      description: "Intelligence artificielle, Big Data, et projets à grande échelle. La dernière marche avant le monde professionnel.",
+      description: "Bilan disponible à la fin de ma 3ème année de BUT.",
       link: "/bilans/annee-3",
-      period: "2025 — 2026",
+      period: "2026 — 2027",
     },
   ];
 

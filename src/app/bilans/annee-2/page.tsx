@@ -7,42 +7,38 @@ import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
 
 export default function BilanAnnee2() {
-  const achievements = [
-    "Projet de fin d'année distingué",
-    "Maîtrise de React et Next.js",
-    "Stage de 2 mois en entreprise",
-  ];
 
-  const skills = [
-    "React",
-    "Next.js",
-    "TypeScript",
-    "Node.js",
-    "API REST",
-    "MongoDB",
-    "Git avancé",
-  ];
 
   const sections = [
     {
       title: "Introduction",
-      content:
-        "La deuxième année a été marquée par un approfondissement significatif de mes compétences techniques et une première immersion en entreprise. J'ai pu mettre en pratique mes connaissances sur des projets concrets et développer ma capacité à travailler en équipe.",
+      paragraphs: [
+        "Cette deuxième année de BUT Science des Données a été une année importante dans mon parcours, marquée à la fois par des défis et une évolution personnelle significative. Elle m'a permis de mieux me connaître en tant qu'étudiant, notamment dans ma manière d'apprendre, de m'organiser et de faire face aux difficultés."
+      ],
     },
     {
-      title: "Expérience en entreprise",
-      content:
-        "Mon stage de 2 mois m'a permis de découvrir le monde professionnel et de comprendre les enjeux du développement en entreprise. J'ai travaillé sur des projets réels et appris à respecter des deadlines et des standards de qualité élevés.",
+      title: "1. De la théorie à la pratique : la force des projets",
+      paragraphs: [
+        "Tout au long de l'année, j'ai été confronté à des enseignements variés, mêlant théorie et pratique. Les projets réalisés ont été particulièrement marquants, car ils m'ont permis de sortir du cadre purement académique pour travailler sur des problématiques concrètes. Ce sont ces situations, plus proches de la réalité professionnelle, qui m'ont le plus motivé et qui ont renforcé mon intérêt pour le domaine de la donnée. Ils m'ont aussi permis de développer une certaine autonomie dans ma manière de travailler et de mieux comprendre comment mobiliser mes connaissances dans des contextes différents."
+      ],
     },
     {
-      title: "Défis et apprentissages",
-      content:
-        "Le principal défi a été de gérer la complexité croissante des projets. J'ai appris à structurer mon code de manière plus professionnelle et à utiliser des outils de collaboration comme Git de façon avancée. La gestion de projet agile a également été un apprentissage important.",
+      title: "2. Face aux obstacles : persévérance en mathématiques",
+      paragraphs: [
+        "Cependant, cette année n'a pas été exempte de difficultés, notamment dans les matières à dominante mathématique. Au début, certains concepts étaient plus complexes à appréhender, ce qui a pu me freiner dans ma progression. Avec le recul, cette difficulté m'a permis de développer de la persévérance. En m'investissant davantage et en retravaillant les notions, j'ai progressivement réussi à progresser, ce qui constitue pour moi une réelle satisfaction."
+      ],
     },
     {
-      title: "Perspectives",
-      content:
-        "Pour la troisième année, je souhaite me spécialiser davantage et développer une expertise dans un domaine spécifique. Je prévois également de réaliser un stage plus long et de travailler sur des projets d'envergure plus importante.",
+      title: "3. Concilier cours et alternance : gestion du temps",
+      paragraphs: [
+        "Au-delà des aspects académiques, cette année m'a également appris à mieux gérer mon temps et ma charge de travail. Le fait de devoir concilier formation et alternance m'a poussé à m'organiser de manière plus rigoureuse et à gagner en efficacité."
+      ],
+    },
+    {
+      title: "Conclusion et perspectives d'avenir",
+      paragraphs: [
+        "Enfin, cette année a confirmé mon projet personnel. Je souhaite m'orienter vers le métier de data engineer, en lien avec mon intérêt pour la manipulation et la structuration des données. Dans cette continuité, j'envisage de poursuivre mes études dans une école, idéalement à Paris, tout en ayant pour objectif de rester au sein du groupe Covéa si l'opportunité se présente."
+      ],
     },
   ];
 
@@ -93,60 +89,7 @@ export default function BilanAnnee2() {
             </h1>
           </motion.header>
 
-          {/* Achievements */}
-          <motion.section
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="mb-16"
-          >
-            <h2
-              className="font-mono text-sm uppercase tracking-widest mb-8"
-              style={{ color: "var(--accent)" }}
-            >
-              Réalisations
-            </h2>
-            <div className="space-y-0">
-              {achievements.map((item, i) => (
-                <div
-                  key={i}
-                  className="py-5 border-b flex items-center gap-6"
-                  style={{ borderColor: "var(--border)" }}
-                >
-                  <span className="font-mono text-sm" style={{ color: "var(--text-muted)" }}>
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <span className="text-lg">{item}</span>
-                </div>
-              ))}
-            </div>
-          </motion.section>
 
-          {/* Skills */}
-          <motion.section
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="mb-16"
-          >
-            <h2
-              className="font-mono text-sm uppercase tracking-widest mb-8"
-              style={{ color: "var(--accent)" }}
-            >
-              Compétences acquises
-            </h2>
-            <div className="flex flex-wrap gap-3">
-              {skills.map((skill, i) => (
-                <span
-                  key={i}
-                  className="px-4 py-2 text-sm font-mono uppercase tracking-wider border transition-colors duration-300 hover:border-[var(--accent)] hover:text-[var(--accent)]"
-                  style={{ borderColor: "var(--border)", color: "var(--text-secondary)" }}
-                >
-                  {skill}
-                </span>
-              ))}
-            </div>
-          </motion.section>
 
           {/* Text sections */}
           {sections.map((section, i) => (
@@ -158,12 +101,17 @@ export default function BilanAnnee2() {
               className="mb-16"
             >
               <h2 className="font-display text-2xl md:text-3xl mb-6">{section.title}</h2>
-              <p
-                className="text-lg leading-relaxed"
-                style={{ color: "var(--text-secondary)" }}
-              >
-                {section.content}
-              </p>
+              <div className="space-y-4">
+                {section.paragraphs.map((paragraph, pIndex) => (
+                  <p
+                    key={pIndex}
+                    className="text-lg leading-relaxed"
+                    style={{ color: "var(--text-secondary)" }}
+                  >
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
             </motion.section>
           ))}
 

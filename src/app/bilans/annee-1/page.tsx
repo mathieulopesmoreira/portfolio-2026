@@ -7,36 +7,39 @@ import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
 
 export default function BilanAnnee1() {
-  const achievements = [
-    "Mention Bien au premier semestre",
-    "Maîtrise des fondamentaux Python & SQL",
-    "Participation à 3 projets data",
-  ];
 
-  const skills = [
-    "HTML/CSS",
-    "JavaScript",
-    "Git",
-    "Python",
-    "Algorithmique",
-    "Base de données",
-  ];
 
   const sections = [
     {
       title: "Introduction",
-      content:
-        "Ma première année a été une année de découverte et d'apprentissage des fondamentaux. J'ai pu développer mes compétences techniques tout en découvrant le monde de la data science. Cette année m'a permis de poser des bases solides pour la suite de mon parcours.",
+      paragraphs: [
+        "Au seuil de mon entrée en alternance, je tire un bilan très positif de cette année universitaire. Elle fut à la fois une confirmation de mon orientation et une période d'apprentissage intense qui m'a permis de mieux cerner mes compétences et mes axes de progression en vue de mon futur parcours professionnel."
+      ],
     },
     {
-      title: "Défis et apprentissages",
-      content:
-        "Le principal défi a été de m'adapter au rythme de travail et à la quantité d'informations à assimiler. J'ai appris à organiser mon temps et à travailler de manière plus efficace. La collaboration en équipe a également été un point important de mon apprentissage.",
+      title: "1. La collaboration comme moteur de réussite",
+      paragraphs: [
+        "La conduite de projets multiples fut sans conteste l'expérience la plus marquante de l'année. Chaque projet m'a immergé dans une dynamique de travail collectif, m'obligeant à développer une communication claire et une réelle capacité d'écoute pour parvenir à un consensus. J'ai constaté que mon inclination naturelle à la médiation plutôt qu'à l'imposition d'idées a été un facteur clé pour assurer la cohésion des équipes et la réussite de nos objectifs. Ces expériences pratiques ont été le véritable socle du développement de mes compétences organisationnelles."
+      ],
     },
     {
-      title: "Perspectives",
-      content:
-        "Pour la deuxième année, je souhaite approfondir mes connaissances en data science et me spécialiser dans le machine learning. Je prévois également de participer à des projets plus ambitieux et de contribuer à des projets open source.",
+      title: "2. Lucidité sur un défi majeur : les mathématiques",
+      paragraphs: [
+        "En toute transparence, ma principale difficulté se situe en mathématiques théoriques. L'abstraction des concepts et la complexité du vocabulaire créent chez moi une barrière initiale qui a un fort effet démotivant. Je dois reconnaître que ce découragement m'a souvent empêché de fournir l'effort soutenu et régulier qui serait indispensable pour surmonter ces obstacles. Mes résultats, en deçà de mes attentes, sont donc le reflet logique de cette situation : une matière que j'ai du mal à aborder et, par conséquent, un investissement en travail qui s'en est ressenti.",
+        "Cette situation m'a cependant forcé à une introspection. Je réalise aujourd'hui que ma méthode de travail habituelle, basée sur l'écoute et la relecture, n'est absolument pas adaptée à cette discipline qui exige une approche différente."
+      ],
+    },
+    {
+      title: "3. Développement de compétences comportementales",
+      paragraphs: [
+        "Parallèlement aux savoirs techniques, cette année m'a contraint à développer un ensemble de compétences comportementales essentielles. La multiplication des échéances et la complexité des projets m'ont appris à mieux structurer mon travail, à hiérarchiser les priorités et, par conséquent, à gérer plus sereinement la pression. Je me sens aujourd'hui bien mieux armé pour faire face aux exigences du monde professionnel."
+      ],
+    },
+    {
+      title: "Conclusion et plan d'action",
+      paragraphs: [
+        "Au final, je sors de cette année non pas seulement avec de nouvelles connaissances, mais avec une meilleure compréhension de mon propre fonctionnement. J'ai pu confirmer mes forces en matière de collaboration tout en identifiant avec précision un point de vigilance qui nécessitera une approche nouvelle et plus stratégique."
+      ],
     },
   ];
 
@@ -87,60 +90,7 @@ export default function BilanAnnee1() {
             </h1>
           </motion.header>
 
-          {/* Achievements */}
-          <motion.section
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="mb-16"
-          >
-            <h2
-              className="font-mono text-sm uppercase tracking-widest mb-8"
-              style={{ color: "var(--accent)" }}
-            >
-              Réalisations
-            </h2>
-            <div className="space-y-0">
-              {achievements.map((item, i) => (
-                <div
-                  key={i}
-                  className="py-5 border-b flex items-center gap-6"
-                  style={{ borderColor: "var(--border)" }}
-                >
-                  <span className="font-mono text-sm" style={{ color: "var(--text-muted)" }}>
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <span className="text-lg">{item}</span>
-                </div>
-              ))}
-            </div>
-          </motion.section>
 
-          {/* Skills */}
-          <motion.section
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="mb-16"
-          >
-            <h2
-              className="font-mono text-sm uppercase tracking-widest mb-8"
-              style={{ color: "var(--accent)" }}
-            >
-              Compétences acquises
-            </h2>
-            <div className="flex flex-wrap gap-3">
-              {skills.map((skill, i) => (
-                <span
-                  key={i}
-                  className="px-4 py-2 text-sm font-mono uppercase tracking-wider border transition-colors duration-300 hover:border-[var(--accent)] hover:text-[var(--accent)]"
-                  style={{ borderColor: "var(--border)", color: "var(--text-secondary)" }}
-                >
-                  {skill}
-                </span>
-              ))}
-            </div>
-          </motion.section>
 
           {/* Text sections */}
           {sections.map((section, i) => (
@@ -152,12 +102,17 @@ export default function BilanAnnee1() {
               className="mb-16"
             >
               <h2 className="font-display text-2xl md:text-3xl mb-6">{section.title}</h2>
-              <p
-                className="text-lg leading-relaxed"
-                style={{ color: "var(--text-secondary)" }}
-              >
-                {section.content}
-              </p>
+              <div className="space-y-4">
+                {section.paragraphs.map((paragraph, pIndex) => (
+                  <p
+                    key={pIndex}
+                    className="text-lg leading-relaxed"
+                    style={{ color: "var(--text-secondary)" }}
+                  >
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
             </motion.section>
           ))}
 

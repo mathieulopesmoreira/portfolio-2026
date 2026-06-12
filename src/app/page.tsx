@@ -164,9 +164,9 @@ function AboutTeaser() {
           <div>
             <span className="section-number">03 — À propos</span>
             <TextReveal as="h2" className="heading-lg mt-4 mb-8">
-              Un parcours
+              Mon parcours
               <br />
-              <span style={{ color: "var(--accent)" }}>atypique</span>
+              <span style={{ color: "var(--accent)" }}>&amp; mon histoire</span>
             </TextReveal>
           </div>
 
@@ -181,17 +181,16 @@ function AboutTeaser() {
               className="text-lg leading-relaxed mb-6"
               style={{ color: "var(--text-secondary)" }}
             >
-              De la cuisine à la data science, chaque étape de mon parcours
-              m&apos;a appris la rigueur, la créativité et le goût du détail.
-              Aujourd&apos;hui, je transforme les données en récits visuels
-              et les idées en solutions concrètes.
+              Après un Bac STI2D et des expériences formatrices en restauration, 
+              je me suis orienté vers la science des données. Aujourd&apos;hui en BUT et en alternance chez Covéa, 
+              je conçois des architectures de données et développe des systèmes fiables.
             </p>
             <p
               className="text-lg leading-relaxed mb-10"
               style={{ color: "var(--text-secondary)" }}
             >
-              Passionné d&apos;auto-hébergement, je crois en l&apos;autonomie
-              numérique et la maîtrise de ses propres outils.
+              Passionné d&apos;informatique, de self-hosting et d&apos;administration système, 
+              je cherche à comprendre en profondeur les technologies pour bâtir des infrastructures indépendantes.
             </p>
             <MagneticButton>
               <Link
@@ -221,9 +220,9 @@ function SkillsTeaser() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const skills = [
-    "Python", "Pandas", "NumPy", "Scikit-learn",
-    "SQL", "PostgreSQL", "Power BI", "Docker",
-    "Git", "Linux", "Jupyter", "R",
+    "Python", "Pandas", "NumPy", "SAS",
+    "SQL", "BO", "SAS VA", "Power BI",
+    "JavaScript", "Docker", "Git", "Linux",
   ];
 
   return (
@@ -358,10 +357,6 @@ export default function Home() {
     <main>
       <Navbar />
       <Hero />
-      <ProjectsTeaser />
-      <AboutTeaser />
-      <SkillsTeaser />
-      <ContactCTA />
       <Footer />
     </main>
   );
