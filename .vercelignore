@@ -1,8 +1,9 @@
 # Ignore heavy zips and raw data folders
-zips/
-public/projects/zips/cartographie-mcdonalds-qgis.zip
-public/projects/zips/QGIS.zip
-img/
+/zips/
+/public/projects/zips/cartographie-mcdonalds-qgis.zip
+/public/projects/zips/QGIS.zip
+/img/
 .next/
 node_modules/
 .vercel
+
