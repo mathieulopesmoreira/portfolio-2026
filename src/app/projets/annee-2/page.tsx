@@ -87,18 +87,8 @@ export default function ProjetsAnnee2() {
       github: "#",
       demo: "#",
     },
-    {
-      title: "Théorie des Sondages et Estimation — R",
-      description:
-        "Application de méthodes d'échantillonnage statistique et d'estimation démographique sur la population des communes de Nouvelle-Aquitaine.",
-      details:
-        "Étude méthodologique de la théorie des sondages sous R pour comparer l'efficacité et la précision de différents plans d'échantillonnage pour estimer la population totale de la Nouvelle-Aquitaine.\n\nCe qui a été fait :\n• Préparation de la base de sondage : Ingestion du fichier officiel de la population des communes françaises (`population_francaise_communes.csv`), filtrage de la région Nouvelle-Aquitaine, nettoyage et formatage des variables de population.\n• Implémentation des plans de sondage : Utilisation de la bibliothèque R `sampling` (`sae Octave Matthieu.r`) pour implémenter plusieurs méthodes de tirage d'un échantillon (taille n=100) : Sondage Aléatoire Simple Sans Remise (SASSR), Sondage Systématique, et Sondage Stratifié (avec division en 4 strates basées sur les quintiles de population).\n• Estimation et calcul de précision : Calcul des estimateurs de Horvitz-Thompson pour estimer la population totale, détermination des intervalles de confiance à 95% et calcul des marges d'erreur et des variances de chaque plan de sondage.\n• Analyse comparative : Rédaction d'un rapport détaillé (`Rapport Octave Mathieu.pdf`) évaluant et classant les méthodes selon leur niveau de précision statistique.",
-      tags: ["R", "Sondages", "Estimation", "Statistiques"],
-      zip: "/projects/zips/theorie-sondages-estimation-r.zip",
-      github: "#",
-      demo: "#",
-    },
   ];
+
 
   return (
     <PageTransition>
